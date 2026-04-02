@@ -1,0 +1,5 @@
+.admin-shell .stats-card { padding: 1.25rem; }
+.admin-shell .stats-card p { color: var(--muted); margin-bottom: 0.35rem; }
+.admin-shell .stats-card strong { font-size: 2rem; font-family: var(--font-display); }
+.admin-panel .table td, .admin-panel .table th { white-space: nowrap; }
+.admin-panel .table td:last-child, .admin-panel .table th:last-child { text-align: right; }
