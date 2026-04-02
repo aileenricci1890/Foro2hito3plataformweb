@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crumble Local | Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/home.css">
+</head>
+<body data-page="home">
+  <nav class="navbar navbar-expand-lg sticky-top app-navbar">
+    <div class="container">
+      <a class="navbar-brand brand-mark" href="index.html">Crumble Local</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/menu.html">Menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/locations.html">Ubicaciones</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/admin.html">Admin</a></li>
+          <li class="nav-item"><a class="btn btn-dark rounded-pill px-4" href="pages/cart.html">Carrito <span class="badge text-bg-light ms-2" id="cartCountBadge">0</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero-section">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <span class="eyebrow">Fresh baked weekly</span>
+          <h1 id="heroTitle">Descubre tus cookies favoritas cada semana</h1>
+          <p class="hero-copy" id="heroText">Sabores de temporada, clasicos irresistibles y pedidos locales listos en minutos.</p>
+          <div class="d-flex flex-wrap gap-3">
+            <a class="btn btn-dark btn-lg rounded-pill px-4" href="pages/menu.html" id="heroButtonText">Ordena ahora</a>
+            <a class="btn btn-outline-dark btn-lg rounded-pill px-4" href="pages/locations.html">Ver sucursales</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="hero-showcase">
+            <div class="showcase-card tilt-a">
+              <span class="cookie-chip"></span>
+              <h3>Weekly Box</h3>
+              <p>Sabores rotativos para sorprender en cada visita.</p>
+            </div>
+            <div class="showcase-card tilt-b">
+              <span class="cookie-chip"></span>
+              <h3>Classic Picks</h3>
+              <p>Los favoritos que siempre estan listos para compartir.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section-space">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">This week only</span>
+          <h2 id="weeklyLabel">Sabores de esta semana</h2>
+          <p>Una seleccion corta y llamativa para impulsar el MVP y destacar novedades.</p>
+        </div>
+        <div class="row g-4" id="weeklyProducts"></div>
+      </div>
+    </section>
+
+    <section class="section-space section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Always available</span>
+          <h2>Clasicos de la casa</h2>
+          <p>Productos permanentes que le dan estabilidad al menu y al flujo de compra.</p>
+        </div>
+        <div class="row g-4" id="classicProducts"></div>
+      </div>
+    </section>
+
+    <section class="section-space">
+      <div class="container">
+        <div class="promo-banner">
+          <div>
+            <span class="eyebrow">MVP local</span>
+            <h2>Un prototipo listo para demo academica</h2>
+            <p>Sin backend, sin base de datos y con persistencia usando `localStorage`.</p>
+          </div>
+          <a class="btn btn-light rounded-pill px-4" href="pages/admin.html">Administrar contenido</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-space">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Pickup points</span>
+          <h2>Sucursales destacadas</h2>
+          <p>Vista resumida de ubicaciones para retiro o consulta.</p>
+        </div>
+        <div class="row g-4" id="featuredLocations"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container d-flex flex-column flex-md-row justify-content-between gap-3">
+      <p class="mb-0">Crumble Local MVP 2026</p>
+      <div class="d-flex gap-3">
+        <a href="pages/menu.html">Menu</a>
+        <a href="pages/locations.html">Ubicaciones</a>
+        <a href="pages/admin.html">Admin</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 shadow-lg">
+        <div class="modal-body p-0" id="productModalContent"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/data/seed.js"></script>
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/products.js"></script>
+</body>
+</html>

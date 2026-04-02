@@ -1,0 +1,38 @@
+.hero-section { padding: 5rem 0 3rem; }
+.hero-section h1 { font-size: clamp(2.8rem, 6vw, 5rem); line-height: 0.95; margin-bottom: 1rem; }
+.hero-showcase { min-height: 430px; position: relative; }
+
+.showcase-card {
+  position: absolute;
+  width: min(320px, 100%);
+  padding: 1.5rem;
+  border-radius: 32px;
+  color: var(--ink);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255,255,255,0.6);
+}
+
+.showcase-card h3 { margin-top: 1rem; }
+.tilt-a { top: 10%; right: 5%; background: linear-gradient(135deg, #f6d7cd, #fff2e4); transform: rotate(-6deg); }
+.tilt-b { bottom: 5%; left: 2%; background: linear-gradient(135deg, #f0e0b8, #fff8ea); transform: rotate(7deg); }
+
+.cookie-chip {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: inline-block;
+  background:
+    radial-gradient(circle at 40% 40%, #7d4a37 0 6px, transparent 7px),
+    radial-gradient(circle at 65% 62%, #7d4a37 0 5px, transparent 6px),
+    radial-gradient(circle at 45% 68%, #7d4a37 0 4px, transparent 5px),
+    linear-gradient(135deg, #ddae72, #c98a4c);
+}
+
+@media (max-width: 991px) {
+  .hero-showcase { min-height: 320px; }
+}
+
+@media (max-width: 767px) {
+  .showcase-card { position: relative; width: 100%; transform: none; margin-bottom: 1rem; }
+  .hero-showcase { min-height: auto; }
+}
